@@ -9,7 +9,8 @@
 
   function showMessage(text, ok = false){
     msg.textContent = text;
-    msg.style.color = ok ? '#16a34a' : 'var(--danger)';
+    msg.classList.remove('success', 'error');
+    msg.classList.add(ok ? 'success' : 'error');
   }
 
   function wrong(){
