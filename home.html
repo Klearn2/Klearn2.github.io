@@ -10,7 +10,6 @@
       --bg:#ffffff;
       --accent:#2563eb;
       --text:#111827;
-      --sub:#6b7280;
     }
 
     *{box-sizing:border-box}
@@ -24,16 +23,25 @@
       min-height:100vh;
     }
 
-    /* ヘッダー */
+    /* ヘッダー（ロゴ） */
     header{
       padding:24px;
     }
 
     .logo{
+      display:inline-flex;
+      align-items:center;
+      gap:8px;
       text-decoration:none;
       color:var(--text);
       font-weight:600;
       font-size:16px;
+    }
+
+    .logo img{
+      height:32px;   /* ロゴ画像サイズ */
+      width:auto;
+      display:block;
     }
 
     /* メイン */
@@ -46,12 +54,21 @@
       text-align:center;
     }
 
+    /* タイトル */
     h1{
-      font-size:42px;
-      font-weight:700;
-      margin-bottom:32px;
+      font-size:64px;
+      font-weight:800;
+      margin:0 0 48px;
+      letter-spacing:0.5px;
     }
 
+    /* K だけ強調 */
+    .k{
+      font-size:88px;
+      font-weight:900;
+    }
+
+    /* メニュー */
     ul{
       list-style:none;
       padding:0;
@@ -59,15 +76,16 @@
     }
 
     li{
-      margin:12px 0;
+      margin:20px 0;
     }
 
     a.menu-link{
-      font-size:18px;
+      font-size:28px;     /* ← 箇条書きを大きく */
+      font-weight:600;
       text-decoration:none;
       color:var(--text);
-      padding:6px 12px;
-      border-radius:8px;
+      padding:8px 16px;
+      border-radius:10px;
       transition:background .15s, color .15s;
     }
 
@@ -80,29 +98,32 @@
 
 <body>
   <header>
-    <a href="index.html" class="logo">ロゴ</a>
+    <!-- ロゴ：画像を差し替えるだけ -->
+    <a href="index.html" class="logo">
+      <!-- 例: logo.png を同じフォルダに置く -->
+      <img src="logo.png" alt="Klearn ロゴ">
+      <!-- 画像が無い場合の保険 -->
+      <span>Klearn</span>
+    </a>
   </header>
 
   <main>
-    <h1>Klearn</h1>
+    <h1>
+      <span class="k">K</span>learn
+    </h1>
 
     <ul>
       <li>
-        <a class="menu-link" href="pages/tasks.html">
-          今でている課題一覧
+        <a class="menu-link" href="tasks.html">
+          ・今でている課題一覧
         </a>
       </li>
       <li>
-        <a class="menu-link" href="pages/books.html">
-          教科書リスト（検索）
+        <a class="menu-link" href="books.html">
+          ・教科書リスト（検索）
         </a>
       </li>
     </ul>
   </main>
-
-  <script>
-    // 今は特に処理なし（将来用）
-    console.log('Klearn loaded');
-  </script>
 </body>
 </html>
