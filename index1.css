@@ -23,6 +23,14 @@ body{
   padding:24px;
 }
 
+.message.error{
+  color:#dc2626;
+}
+
+.message.success{
+  color:#16a34a;
+}
+
 .card{
   width:100%;
   max-width:420px;
