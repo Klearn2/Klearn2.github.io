@@ -1,7 +1,7 @@
 (() => {
   const PASSWORD = 'makoto';
   const redirectUrl =
-    'file:///home/chronos/u-cd218c46a82fade00246e444403aa9e3b8309d20/MyFiles/Downloads/%E3%81%B7%E3%82%8D%E3%81%90%E3%82%89%E3%81%BF%E3%82%93%E3%81%90/%E3%81%8F%E3%82%8C%E3%81%82%E3%83%BC%E3%82%93%EF%BC%92.html';
+    'https://klearn2.github.io/home';
 
   const input = document.getElementById('pw');
   const msg = document.getElementById('msg');
