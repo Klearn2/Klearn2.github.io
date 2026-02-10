@@ -1,7 +1,7 @@
 (() => {
   const PASSWORD = 'makoto';
   const redirectUrl =
-    'https://klearn2.github.io/home/';
+    'https://klearn2.github.io/home';
 
   const input = document.getElementById('pw');
   const msg = document.getElementById('msg');
