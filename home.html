@@ -1,195 +1,104 @@
 <!doctype html>
 <html lang="ja">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Klearn</title>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Klearn</title>
 
-  <style>
-    :root{
-      --bg:#ffffff;
-      --accent:#2563eb;
-      --text:#111827;
-    }
+<style>
+:root{
+  --accent:#2563eb;
+  --text:#111827;
+}
 
-    *{box-sizing:border-box}
+*{box-sizing:border-box}
 
-    body{
-      margin:0;
-      font-family:system-ui,-apple-system,Segoe UI,Roboto,
-        "Hiragino Kaku Gothic ProN","Noto Sans JP",sans-serif;
-      background:var(--bg);
-      color:var(--text);
-      min-height:100vh;
-    }
+body{
+  margin:0;
+  font-family:system-ui,-apple-system,Segoe UI,Roboto,
+  "Hiragino Kaku Gothic ProN","Noto Sans JP",sans-serif;
+  color:var(--text);
+}
 
-    /* ヘッダー（ロゴ） */
-    header{
-      padding:24px;
-    }
+/* 上部エリア */
+.top{
+  height:55vh;
+  display:flex;
+  align-items:flex-start;
+  padding:40px;
+}
 
-    .logo{
-      display:inline-flex;
-      align-items:center;
-      gap:8px;
-      text-decoration:none;
-      color:var(--text);
-      font-weight:600;
-      font-size:16px;
-    }
+/* ロゴ */
+.logo{
+  font-size:40px;
+  font-weight:700;
+  cursor:pointer;
+}
 
-    .logo img{
-      height:40px;   /* ロゴ画像サイズ */
-      width:auto;
-      display:block;
-    }
+/* 下部エリア */
+.bottom{
+  display:flex;
+  height:45vh;
+  border-top:4px solid black;
+}
 
-    /* メイン */
-    main{
-      min-height:calc(100vh - 80px);
-      display:flex;
-      flex-direction:column;
-      justify-content:center;
-      align-items:center;
-      text-align:center;
-    }
+/* サイドバー */
+.sidebar{
+  width:0;
+  overflow:hidden;
+  border-right:4px solid black;
+  transition:width .3s ease;
+  padding:40px 0 0 40px;
+}
 
-    /* タイトル */
-    h1{
-      font-size:64px;
-      font-weight:800;
-      margin:0 0 48px;
-      letter-spacing:0.5px;
-    }
+/* メイン */
+.content{
+  flex:1;
+  padding:40px;
+}
 
-    /* K だけ強調 */
-    .k{
-      font-size:90px;
-      font-weight:900;
-      color:var(--accent);
-    }
+/* ロゴにホバーで開く */
+.wrapper:hover .sidebar{
+  width:280px;
+}
 
-    /* メニュー */
-    ul{
-      list-style:none;
-      padding:0;
-      margin:0;
-    }
+/* サイドバー内 */
+.sidebar ul{
+  list-style:none;
+  padding:0;
+}
 
-    li{
-      margin:20px 0;
-    }
+.sidebar li{
+  margin:20px 0;
+  font-size:20px;
+}
 
-    a.menu-link{
-      font-size:28px;     /* ← 箇条書きを大きく */
-      font-weight:600;
-      text-decoration:none;
-      color:var(--text);
-      padding:8px 16px;
-      border-radius:10px;
-      transition:background .15s, color .15s;
-      color:var(--accent);
-    }
-
-    a.menu-link:hover{
-      background:rgba(37,99,235,0.08);
-      color:var(--accent); 
-    }
-
-        /* ロゴ＋サイドバーをまとめる */
-    .logo-area{
-      position:relative;
-    }
-    
-    /* サイドバー本体 */
-    .sidebar{
-      position:absolute;
-      top:-20px;
-      left:0;
-    
-      width:240px;
-      padding:80px 24px 24px;
-    
-      background:white;
-      border-radius:16px;
-      box-shadow:0 10px 30px rgba(0,0,0,0.08);
-    
-      transform:translateX(-110%);
-      transition:transform .3s ease;
-      z-index:1;
-    }
-    
-    /* ロゴにホバーしたら出す */
-    .logo-area:hover .sidebar{
-      transform:translateX(0);
-    }
-    
-    /* サイドバー中身 */
-    .sidebar ul{
-      list-style:none;
-      padding:0;
-      margin:0;
-    }
-    
-    .sidebar li{
-      margin:12px 0;
-    }
-    
-    .sidebar a{
-      text-decoration:none;
-      color:var(--text);
-      font-size:16px;
-      font-weight:500;
-    }
-    
-    .sidebar a:hover{
-      color:var(--accent);
-    }
-    
-        
-  </style>
+</style>
 </head>
 
 <body>
-  <header class="header">
-    <div class="logo-area">
-      <a href="index.html" class="logo">
-        <img src="logo.png" alt="うまく画像が表示できない">
-        <span>Klearn</span>
-      </a>
-  
-      <!-- サイドバー -->
-      <nav class="sidebar">
-        <ul>
-          <li><a href="index.html">パスワードを打つ</a></li>
-          <li><a href="tasks.html">課題一覧</a></li>
-          <li><a href="books.html">教科書検索</a></li>
-          <li><a href="bmath.html">web教科書：数学</a>></li>
-          <li><a href="bsocial.html">web教科書：社会</a>></li>
-          <li><a herf="bkanji.html">web教科書：漢字</a></li>
-        </ul>
-      </nav>
+
+<div class="wrapper">
+
+  <div class="top">
+    <div class="logo">ロゴ</div>
+  </div>
+
+  <div class="bottom">
+    <div class="sidebar">
+      <ul>
+        <li>リスト</li>
+        <li>リスト</li>
+        <li>リスト</li>
+      </ul>
     </div>
-  </header>
 
+    <div class="content">
+      （←したままで続いている）
+    </div>
+  </div>
 
-  <main>
-    <h1>
-      <span class="k">K</span>learn
-    </h1>
+</div>
 
-    <ul>
-      <li>
-        <a class="menu-link" href="tasks.html">
-          ・今でている課題一覧
-        </a>
-      </li>
-      <li>
-        <a class="menu-link" href="books.html">
-          ・教科書リスト（検索）
-        </a>
-      </li>
-    </ul>
-  </main>
 </body>
 </html>
