@@ -96,12 +96,57 @@
       color:var(--accent); 
     }
 
-    sidebar{
-      font-size:20px;
-      font-weight:400;
-      color:var(--accsent);
-    }
-    
+      /* ロゴ＋サイドバーをまとめる */
+  .logo-area{
+    position:relative;
+  }
+  
+  /* サイドバー本体 */
+  .sidebar{
+    position:absolute;
+    top:-20px;
+    left:0;
+  
+    width:240px;
+    padding:80px 24px 24px;
+  
+    background:white;
+    border-radius:16px;
+    box-shadow:0 10px 30px rgba(0,0,0,0.08);
+  
+    transform:translateX(-110%);
+    transition:transform .3s ease;
+    z-index:1;
+  }
+  
+  /* ロゴにホバーしたら出す */
+  .logo-area:hover .sidebar{
+    transform:translateX(0);
+  }
+  
+  /* サイドバー中身 */
+  .sidebar ul{
+    list-style:none;
+    padding:0;
+    margin:0;
+  }
+  
+  .sidebar li{
+    margin:12px 0;
+  }
+  
+  .sidebar a{
+    text-decoration:none;
+    color:var(--text);
+    font-size:16px;
+    font-weight:500;
+  }
+  
+  .sidebar a:hover{
+    color:var(--accent);
+  }
+  
+      
   </style>
 </head>
 
@@ -118,7 +163,7 @@
         <ul>
           <li><a href="index.html">パスワードを打つ</a></li>
           <li><a href="tasks.html">課題一覧</a></li>
-          <li><a href="books.html">web教科書リスト</a></li>
+          <li><a href="books.html">教科書検索</a></li>
           <li><a href="bmath.html">web教科書：数学</a>></li>
           <li><a href="bsocial.html">web教科書：社会</a>></li>
           <li><a herf="bkanji.html">web教科書：漢字</a></li>
